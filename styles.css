@@ -1,25 +1,31 @@
-/* 基本スタイル (モバイルファースト) */
+/* 全体の背景と文字スタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f4f4f9; /* 背景色を淡いグレーに */
     color: #343a40;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ページ全体を中央揃えに */
+}
+
+/* ページの中央コンテナ */
+.container {
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 視覚的に浮き上がる効果 */
     text-align: center;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* 見出し */
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
+    font-weight: bold;
     color: #222;
     border-bottom: 2px solid #007bff;
     display: inline-block;
@@ -27,102 +33,137 @@ h1 {
 }
 
 h2 {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-top: 30px;
     color: #007bff;
 }
 
-/* メイン入力ボックス */
-#main-input {
-    width: 90%;
-    max-width: 500px;
-    height: 40px;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin-bottom: 20px;
+/* 入力セグメントのスタイル */
+#input-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 15px repeat(7, 1fr) 15px repeat(5, 1fr); /* 5+7+5 の列構成 */
+    gap: 10px; /* 各ボックス間のスペース */
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.box {
+    width: 50px; /* 各ボックスの幅 */
+    height: 50px; /* 各ボックスの高さ */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
     border: 2px solid #007bff;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: #f9f9ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* スペース用ダミー */
+.space {
+    width: 15px;
+    height: 40px;
 }
 
 /* ボタンのスタイル */
 button {
-    display: block;
-    margin: 15px auto;
-    padding: 12px 25px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 18px;
     font-weight: bold;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
-}
-
-/* 入力ボックスのレイアウト */
-#input-boxes {
-    display: grid;
-    grid-template-columns: repeat(5, 50px) 30px repeat(7, 50px) 30px repeat(5, 50px);
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.box {
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    text-align: center;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    background: #f9f9ff;
-}
-
-/* 空白スペースのスタイル */
-.space {
-    width: 30px;
-    height: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* 結果表示のスタイル */
 #result {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #28a745;
-    margin-top: 20px;
-    padding: 10px;
-    background: #f9f9ff;
-    border: 2px solid #007bff;
-    border-radius: 5px;
+    margin-top: 15px;
 }
 
-/* レスポンシブデザイン (デスクトップ用) */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-    h2 {
-        font-size: 22px;
-    }
-    #main-input {
-        height: 50px;
-        font-size: 18px;
-    }
-    button {
-        padding: 15px 30px;
-        font-size: 18px;
-    }
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
     #input-boxes {
-        grid-template-columns: repeat(5, 60px) 30px repeat(7, 60px) 30px repeat(5, 60px);
-        gap: 15px;
+        grid-template-columns: repeat(3, 1fr); /* モバイル時は3列に */
     }
+
     .box {
-        height: 60px;
-        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
+
+    button {
+        width: 100%; /* ボタンをフル幅に */
+    }
+}
+
+
+button#populate-button {
+    padding: 10px 20px; /* ボタンの内側の余白を調整 */
+    font-size: 18px; /* テキストサイズを統一 */
+    font-weight: bold; /* 文字を太字に */
+    background-color: #007bff; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    border: none; /* デフォルトの枠線を削除 */
+    border-radius: 8px; /* ボタンの角を丸く */
+    cursor: pointer; /* ポインターを表示 */
+    transition: background-color 0.3s ease, transform 0.2s; /* ホバーアニメーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 立体感を追加 */
+    margin-top: 10px; /* ボタンと入力ボックス間のスペース */
+}
+
+button#populate-button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+#main-input {
+    width: 80%; /* 入力ボックスの幅をページ全体に対して適切な大きさに */
+    max-width: 600px; /* 最大幅を指定して拡大しすぎを防止 */
+    height: 50px; /* 入力ボックスの高さ */
+    font-size: 18px; /* テキストの大きさを調整 */
+    padding: 10px; /* 内側の余白を追加 */
+    border: 2px solid #007bff; /* ボックスの枠線 */
+    border-radius: 8px; /* ボックスの角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影で立体感を出す */
+    transition: box-shadow 0.2s, border-color 0.2s; /* ホバーやフォーカス時のアニメーション */
+}
+
+/* 結果表示のスタイル */
+#result {
+    font-size: 24px; /* 文字サイズを大きく */
+    font-weight: bold; /* 太字で強調 */
+    color: #007bff; /* テキストを目立つ青色に */
+    margin-top: 20px; /* 上部に余白を追加 */
+    line-height: 1.8; /* 行間を広げて読みやすく */
+    text-align: center; /* 中央揃え */
+    word-spacing: 5px; /* 各単語間のスペースを広げる */
+    background-color: #f9f9ff; /* 背景色を淡い青色に */
+    padding: 20px; /* 内側の余白を追加 */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 軽い影をつけて立体感を追加 */
+    border: 2px solid #0056b3; /* 枠線を追加して目立たせる */
 }
