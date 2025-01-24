@@ -1,4 +1,3 @@
-
 // ボタンをクリックした際の動作
 document.getElementById('convert-button').addEventListener('click', function() {
     const boxes = document.querySelectorAll('.box');
@@ -18,8 +17,9 @@ document.getElementById('convert-button').addEventListener('click', function() {
     // 仮の変換アルゴリズム
     const rescueMail = convertToRescueMail(inputMail);
 
-    // 結果を表示
-    document.getElementById('result').textContent = rescueMail;
+    // 結果を整形して表示
+    const formattedResult = formatResult(rescueMail);
+    document.getElementById('result').innerHTML = formattedResult;
 });
 
 // 変換アルゴリズム（例：文字を逆順にする）
@@ -33,6 +33,7 @@ function convertToRescueMail(helpMail) {
         29: 39, // 30番目の文字を39文字次へ
         32: -2  // 34番目の文字を2文字前へ
     };
+
 
     let rescueMail = ""; // 結果の文字列
 
@@ -58,4 +59,11 @@ function convertToRescueMail(helpMail) {
     }
 
     return rescueMail;
+}
+
+// 結果を5+7+5形式で改行を入れる関数
+function formatResult(result) {
+    const line1 = result.slice(0, 5) + " " + result.slice(5, 12) + " " + result.slice(12, 17); // 1行目
+    const line2 = result.slice(17, 22) + " " + result.slice(22, 29) + " " + result.slice(29, 34); // 2行目
+    return line1 + "<br>" + line2; // 改行を入れる
 }
