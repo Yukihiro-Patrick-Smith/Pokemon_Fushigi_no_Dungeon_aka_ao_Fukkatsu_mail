@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
     background: #ffffff;
@@ -91,7 +91,9 @@ button:hover {
 
 /* 結果表示のスタイル */
 #result {
-    font-size: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    font-size: 30px;
     font-weight: bold;
     color: #28a745;
     margin-top: 20px;
