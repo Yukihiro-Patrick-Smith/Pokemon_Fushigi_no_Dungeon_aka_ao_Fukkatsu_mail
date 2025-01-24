@@ -129,3 +129,24 @@ button:hover {
     }
 }
 
+
+
+@media (max-width: 768px) { /* スマホ用 */
+    #input-boxes {
+        grid-template-columns: repeat(5, 30px) 20px repeat(7, 30px) 20px repeat(5, 30px); /* ボックス幅を縮小 */
+        gap: 5px; /* ボックス間のスペースを小さく */
+        justify-content: start; /* 左揃えに変更 */
+        margin-left: 0; /* 左揃えのための調整 */
+
+    }
+    .box {
+        width: 30px; /* ボックスの幅を縮小 */
+        height: 30px; /* ボックスの高さも縮小 */
+        font-size: 12px; /* フォントサイズを調整 */
+    }
+    .space {
+        width: 20px; /* 空白部分も縮小 */
+        height: 30px;
+    }
+}
+
