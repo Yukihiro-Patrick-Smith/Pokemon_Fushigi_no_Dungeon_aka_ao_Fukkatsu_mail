@@ -45,6 +45,8 @@ h2 {
     gap: 10px; /* 各ボックス間のスペース */
     justify-content: center;
     margin: 20px auto;
+    overflow-x: auto; /* 横スクロールを許可（縮小しきれない場合の保険） */
+
 }
 
 .box {
