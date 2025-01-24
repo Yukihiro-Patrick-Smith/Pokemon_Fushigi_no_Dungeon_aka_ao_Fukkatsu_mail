@@ -10,7 +10,20 @@
     <div class="container">
         <h1>助けてメール ⇨ 復活メール変換ツール</h1>
 	<br>
-        <label for="input-boxes">助けてメールを入力してください：</label>
+	<br>
+        <!-- 新しい入力ボックス -->
+	<label for="main-input">助けてメールをコピペしてください</label>
+	<br>	
+	<input type="text" id="main-input" placeholder="コピペ用ボックス">
+	<br>
+	<br>
+        <button id="populate-button">1文字ずつに分解</button>
+
+	<br>
+	<br>
+	<br>
+        <label for="input-boxes">助けてメールを1文字ずつ入力してください</label>
+
         <div id="input-boxes">
             <!-- 1行目（5+7+5の構成） -->
             <input type="text" class="box" maxlength="1" list="valid-characters">
@@ -61,9 +74,9 @@
     <datalist id="valid-characters"></datalist>
 
     <script src="autoFocus.js"></script>
+    <script src="copypaste.js"></script>
     <script src="script.js"></script>
 
-    <!-- 自動フォーカス機能 -->
-    <script src="autoFocus.js"></script>
+
 </body>
 </html>

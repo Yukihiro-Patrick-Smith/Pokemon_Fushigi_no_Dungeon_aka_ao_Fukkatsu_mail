@@ -1,0 +1,129 @@
+/* 基本スタイル (モバイルファースト) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #222;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+/* メイン入力ボックス */
+#main-input {
+    width: 90%;
+    max-width: 500px;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* ボタンのスタイル */
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 入力ボックスのレイアウト */
+#input-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 50px) 30px repeat(7, 50px) 30px repeat(5, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background: #f9f9ff;
+}
+
+/* 空白スペースのスタイル */
+.space {
+    width: 30px;
+    height: 50px;
+}
+
+/* 結果表示のスタイル */
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9ff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* レスポンシブデザイン (デスクトップ用) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    #main-input {
+        height: 50px;
+        font-size: 18px;
+    }
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+    #input-boxes {
+        grid-template-columns: repeat(5, 60px) 30px repeat(7, 60px) 30px repeat(5, 60px);
+        gap: 15px;
+    }
+    .box {
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
