@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助けてメール ⇨ 復活メール変換ツール</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>助けてメール ⇨ 復活メール変換ツール</h1>
+	<br>
+        <label for="input-boxes">助けてメールを入力してください：</label>
+        <div id="input-boxes">
+            <!-- 1行目（5+7+5の構成） -->
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <span class="space"></span>
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <span class="space"></span>
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <!-- 2行目（5+7+5の構成） -->
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <span class="space"></span>
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <span class="space"></span>
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+            <input type="text" class="box" maxlength="1" list="valid-characters">
+        </div>
+
+        <button id="convert-button">変換する</button>
+        <h2>復活メール：</h2>
+        <p id="result"></p>
+    </div>
+    <datalist id="valid-characters"></datalist>
+
+    <script src="autoFocus.js"></script>
+    <script src="script.js"></script>
+
+    <!-- 自動フォーカス機能 -->
+    <script src="autoFocus.js"></script>
+</body>
+</html>
